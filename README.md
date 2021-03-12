@@ -1,2 +1,4 @@
-# process_models_project
- 
+# Process Model Project
+
+This is the repository of the project developed in the subject Process Models studied in University of Lleida
+Authors: Flor Martinez, Aaron Arenas, Jordi Lazo
