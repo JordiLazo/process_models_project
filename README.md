@@ -15,8 +15,9 @@ This are the commands to save the requirements:
 ```
   python -m pip freeze
 ``` 
+```
   freeze > requirements.txt
-
+```
 ## Authors
 This project have been developed by:
 - [Jordi Lazo](https://github.com/JordiLazo)
