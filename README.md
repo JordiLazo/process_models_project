@@ -17,6 +17,6 @@ This are the commands to save the requirements:
 
 ## Authors
 This project have been developed by:
-[Jordi Lazo](https://github.com/JordiLazo)
-[Flor Martinez](https://github.com/flormartinezm)
-[Aaron Arenas](https://github.com/aaron-at97)
+- [Jordi Lazo](https://github.com/JordiLazo)
+- [Flor Martinez](https://github.com/flormartinezm)
+- [Aaron Arenas](https://github.com/aaron-at97)
