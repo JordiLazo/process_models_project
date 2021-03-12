@@ -12,7 +12,9 @@ The idea of our project is to create a web application that allows users to view
 ## Requirements
 In the document named **requirements.txt** you will find the requirements to execute the web application.
 This are the commands to save the requirements:
+
   python -m pip freeze
+  
   freeze > requirements.txt
 
 ## Authors
