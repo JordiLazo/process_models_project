@@ -19,7 +19,7 @@ class Academia(models.Model):
         return reverse('academyApp:academyDetail', kwargs={'pk': self.pk})
 
 
-class Curs(models.Model):
+class Curso(models.Model):
     name = models.CharField(max_length=120)
     description = models.TextField(blank=True, null=True)
     price = models.DecimalField('Euro amount', max_digits=8, decimal_places=2, blank=True, null=True)
