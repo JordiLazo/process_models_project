@@ -24,6 +24,7 @@
             <th>City</th>
             <th>Telephone</th>
             <th>Url</th>
+            <th>User</th>
             <th>Date</th>
         </tr>
     </thead>
@@ -32,22 +33,15 @@
         {% for academia in latest_academies_list%}
         <tr>
 
-        <td>{{ academia.name }}</td>
+            <td>{{ academia.name }}</td>
+            <td>{{ academia.city }}</td>
+            <td>{{ academia.telephone }}</td>
+            <td>{{ academia.url }}</td>
+            <td>{{ academia.user }}</td>
+            <td>{{ academia.date }}</td>
             {% endfor %}
-            </tr>
- <td>Raju-demo-website.com</td>
- <td>raju@example.com</td>
+        </tr>
 
- <tr>
- <td>Raja</td>
- <td>Raja-demo.com</td>
- <td>raja@example.com</td>
- </tr>
- <tr>
- <td>Rani</td>
- <td>Rani-demo.com</td>
- <td>rani@example.com</td>
- </tr>
  </tbody>
  </table>
 
