@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+<ul>
+    {% for academia in academies_list %}
+        <li><a href="{% url '' academia.id %}">
+            {{ academia.name }}</a></li>
+    {% empty %}<li>Sorry, no academies registered yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

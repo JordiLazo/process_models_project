@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <title>{% block title %}Academies{% endblock %}</title>
+</head>
+
+<body>
+
+<div id="header">
+
+</div>
+
+<div id="sidebar">
+    {% block sidebar %}
+        <ul>
+            <li><a href=" ">Home</a></li>
+        </ul>
+    {% endblock %}
+</div>
+
+<div id="content">
+    {% block content %}
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% endblock %}
+</div>
+
+<div id="footer">
+    {% block footer %}{% endblock %}
+</div>
+
+</body>
+</html>

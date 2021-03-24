@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
+from django.utils import timezone
+from django.views.generic import ListView
+from academyApp.models import Academia
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('',
+            ListView.as_view(
+                queryset=Academia.objects.filter(date__lte=timezone.now()).order_by('-date')[:5],
+                context_object_name='latest_academies_list',
+                template_name='academies_list.html'),
+                name='academies_list'),
 ]
