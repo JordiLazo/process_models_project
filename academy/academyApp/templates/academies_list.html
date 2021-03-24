@@ -2,9 +2,9 @@
 {% block content %}
 
 <ul>
-    {% for academia in academies_list %}
-        <li><a href="{% url '' academia.id %}">
-            {{ academia.name }}</a></li>
+    {% for academia in latest_academies_list%}
+        <li>
+            {{ academia.name }}</li>
     {% empty %}<li>Sorry, no academies registered yet.</li>
     {% endfor %}
 </ul>
