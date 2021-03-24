@@ -29,4 +29,8 @@ urlpatterns = [
                 context_object_name='latest_academies_list',
                 template_name='academies_list.html'),
                 name='academies_list'),
+    path('details/', ListView.as_view(queryset=Academia.objects.filter(date__lte=timezone.now()).order_by('-date')[:5],
+                context_object_name='details_academies_list',
+                template_name='academies_details.html'),
+                name='academies_details'),
 ]

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+<ul>
+    {% for academia in latest_academies_list%}
+        <li>{{ academia.name }}</li>
+        <li>{{ academia.city }}</li>
+    {% empty %}<li>Sorry, no academies registered yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
