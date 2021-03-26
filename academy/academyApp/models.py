@@ -11,7 +11,6 @@ class Academia(models.Model):
     url = models.URLField(blank=True, null=True)
     user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
     date = models.DateField(default=date.today)
-
     def __unicode__(self):
         return u"%s" % self.name
 

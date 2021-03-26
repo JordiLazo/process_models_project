@@ -1,11 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <ul>
     {% for academia in latest_academies_list%}
-        <li>
-            {{ academia.name }}</li>
+        <li><a href="/details/">
+            {{ academia.name }}</a></li>
     {% empty %}<li>Sorry, no academies registered yet.</li>
     {% endfor %}
 </ul>
+<!--
+ <form action="{% url 'academies_details' %}" method="post">
+        {% csrf_token %}
+        <label for="team_name"> Ciudades: </label>
+         <select>
+            {% for academia in latest_academies_list%}
+                    <option value="{{ academia.city}}">{{ academia.city }}</option>
+            {% empty %}<option>Sorry, no academies registered yet.</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit"/>
+    </form>-->
+
+
 {% endblock %}
