@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
     <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -15,11 +16,7 @@
 </div>
 
 <div id="sidebar">
-    {% block sidebar %}
-        <ul>
-            <li><a href="/">Home</a></li>
-        </ul>
-    {% endblock %}
+	{%  include 'navbar.html' %}
 </div>
 
 <div id="content">

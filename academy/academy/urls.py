@@ -19,7 +19,7 @@ from django.utils import timezone
 from django.views.generic import ListView
 from academyApp.models import Academia
 from django.conf.urls import url
-from academyApp.views import searchAcademy
+from academyApp.views import test, filtro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,8 +32,8 @@ urlpatterns = [
                 context_object_name='latest_academies_list',
                 template_name='academies_details.html'),
                 name='academies_details'),
-
-    url(r'^academias/(?P<pk>\d+)/city/create/$', searchAcademy, name='academies_details'),
+    url('details/academis/<str:pk>/', test, name='academies_details2'),
+    url('details/academis', filtro, name='academies_details'),
 ]
 
 
@@ -43,4 +43,6 @@ urlpatterns = [
                 context_object_name='latest_academies_list',
                 template_name='academies_list.html'),
                 name='academies_list'),
+                    path('', displaycity, name='academies_list'),
+
 """

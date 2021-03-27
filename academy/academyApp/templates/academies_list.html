@@ -9,18 +9,22 @@
     {% empty %}<li>Sorry, no academies registered yet.</li>
     {% endfor %}
 </ul>
-<!--
- <form action="{% url 'academies_details' %}" method="post">
+
+
+ <form action="/details/academis" method="get">
         {% csrf_token %}
         <label for="team_name"> Ciudades: </label>
-         <select>
+
+        <select name="drop1">
             {% for academia in latest_academies_list%}
                     <option value="{{ academia.city}}">{{ academia.city }}</option>
             {% empty %}<option>Sorry, no academies registered yet.</option>
             {% endfor %}
-        </select>
+         </select>
         <input type="submit" value="Submit"/>
-    </form>-->
+ </form>
+
+
 
 
 {% endblock %}
