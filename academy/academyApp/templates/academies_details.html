@@ -5,10 +5,53 @@
 <title>Table With Border</title>
 
 <h1>Academi tables</h1>
+<script>
+$(document).ready(function() {
+    var name = "drop1"
+    var query = decodeURIComponent(
+    (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+
+    /*var query = window.location.search.substring(1);
+   var vars = query.split("&");
+   for (var i=0; i < vars.length; i++) {
+       var pair = vars[i].split("=");
+   }*/
+    $(" tr ").each(function(){
+        var ciudad = $(this).attr('id')
+        if(query !== ciudad && query!=null && query!=="") {
+            document.getElementById(ciudad).remove();
+        }
+
+    });
+    var ciudades = document.getElementById("drop1");
+    [].slice.call(ciudades.options)
+    .map(function(a){
+    if(this[a.innerText]){
+    ciudades.removeChild(a);
+    } else {
+    this[a.innerText]=1;
+    }
+    },{});
+
+});
+</script>
+ <form action="/details/academis" method="get">
+        {% csrf_token %}
+        <label for="team_name"> Ciudades: </label>
+
+        <select id="drop1" name="drop1">
+            <option value="">Todas las academias</option>
+            {% for ciudadesacademia in latest_academies_list%}
+                    <option value="{{ ciudadesacademia.city}}">{{ ciudadesacademia.city }}</option>
+            {% empty %}<option>Sorry, no city registered yet.</option>
+            {% endfor %}
+         </select>
+        <input type="submit" value="Submit"/>
+ </form>
 
 <table class="table table-sm">
     <thead>
-        <tr>
+        <tr id="head">
             <th>Name</th>
             <th>City</th>
             <th>Telephone</th>
@@ -20,14 +63,14 @@
 
     <tbody>
         {% for academia in latest_academies_list%}
-        <tr>
-
+        <tr id="{{ academia.city }}">
             <td>{{ academia.name }}</td>
             <td>{{ academia.city }}</td>
             <td>{{ academia.telephone }}</td>
             <td>{{ academia.url }}</td>
             <td>{{ academia.user }}</td>
             <td>{{ academia.date }}</td>
+            <td> <button class="btn btn-dark"><a class="white" href="/courses?drop1={{ academia.name }}">View courses</a></button> </td>
         {% endfor %}
         </tr>
 
@@ -36,6 +79,3 @@
 
 {% endblock %}
 
- {% ifequal academia.city key%}
-
-{% endifequal %}

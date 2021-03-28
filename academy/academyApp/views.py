@@ -2,16 +2,16 @@ from tkinter import Entry
 
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from academyApp.models import Academia
+from academyApp.models import Academia, Curso
 from django.urls import reverse
 # Create your views here.
 
-
+"""
 def filtro(request):
     queryset = request.GET.get("drop1")
-    cityobj = Academia.objects.filter(city__exact=queryset)
+    cityobj = Academia.objects.filter(city__contains=queryset)
     return render(request,'academies_details2.html',{"latest_academies_list":cityobj})
-"""
+
 def displaycity(request):
     cityobj=Academia.objects.values('city').distinct()
     return render(request,'academies_list.html',{"latest_academies_list":cityobj})
@@ -27,9 +27,9 @@ def searchAcademy(request, pk):
 def test(request):
     if request.method == ["GET"]:
         response = request.GET['drop1']
-        return render('academies_list.html',{"city":response})
+        return render('academies_list.html',{"name":response})
     else:
-        return HttpResponse('<h1>Page was found</h1>')
+        return HttpResponse('<h1>Page was not found</h1>')
 
 
 

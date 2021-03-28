@@ -2,10 +2,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style>
+        .box-shadow-hover:hover {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .pointer {
+          cursor: pointer;
+        }
+
+        img {
+          width: auto;
+          max-height: 100px;
+        }
+
+        /* JSFiddle display layout adjustment only */
+        .container {
+          margin-bottom: 2rem;
+        }
+        .white {
+            color: white;
+        }
+        .white:hover {
+            color: white;
+        }
+    </style>
     <title>{% block title %}Academies{% endblock %}</title>
 </head>
 
@@ -17,6 +48,7 @@
 
 <div id="sidebar">
 	{%  include 'navbar.html' %}
+
 </div>
 
 <div id="content">

@@ -1,8 +1,11 @@
-from django.forms import ModelForm
-from .models import Academia
+from django.forms import ModelForm, forms
+from .models import Academia, CiudadesAcademia
 
 
 class AcademiaForm(ModelForm):
     class Meta:
         model = Academia
 
+class CiudadAcademiaForm(ModelForm):
+    class Meta:
+        model = CiudadesAcademia

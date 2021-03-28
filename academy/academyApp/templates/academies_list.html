@@ -1,30 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<ul>
+<div class="container">
+  <div class="row">
     {% for academia in latest_academies_list%}
-        <li><a href="/details/">
-            {{ academia.name }}</a></li>
-    {% empty %}<li>Sorry, no academies registered yet.</li>
+
+    <div class="col-md-4 col-sm-6 col-xl-4 my-3">
+      <div class="card d-block h-100 box-shadow-hover">
+        <div class="pt-3 h-75p align-items-center d-flex justify-content-center">
+            <a> <img class="img-fluid w-xs-120p" src="https://raw.githubusercontent.com/solodev/boxes-with-distinct-hover-effect/master/images/valkyrie.png" alt="valkyrie ship image"> </a>
+        </div>
+        <div class="card-body p-4">
+          <h3 class="h4"><strong>{{ academia.name }}</strong></h3>
+          <p><strong> City: </strong>{{ academia.city }}</p>
+          <p><strong> Telephone: </strong>{{ academia.telephone }}</p>
+          <p><strong> URL: </strong>{{ academia.url }}</p>
+         <button class="btn btn-dark"><a class="white" href="/courses?drop1={{ academia.name }}"> view courses </a></button>
+        </div>
+      </div>
+    </div>
+        </a>
     {% endfor %}
-</ul>
+  </div>
+</div>
 
+<script>
+$(document).ready(function() {
 
- <form action="/details/academis" method="get">
-        {% csrf_token %}
-        <label for="team_name"> Ciudades: </label>
-
-        <select name="drop1">
-            {% for academia in latest_academies_list%}
-                    <option value="{{ academia.city}}">{{ academia.city }}</option>
-            {% empty %}<option>Sorry, no academies registered yet.</option>
-            {% endfor %}
-         </select>
-        <input type="submit" value="Submit"/>
- </form>
-
-
-
+});
+</script>
 
 {% endblock %}
