@@ -47,21 +47,3 @@ urlpatterns = [
     path('review/create', FormularioAlumnoView.index, name='review_create'),
     path('review/save', FormularioAlumnoView.procesar_formulario, name='review_save'),
 ]
-
-
-"""
-url('details/academis/<str:pk>/', test, name='academies_details'),
-url('review/create/<str:pk>/', review, name='review_create'),
-url('details/academis', filtro, name='academies_details2'),
-    path('', ListView.as_view(
-                queryset=Academia.objects.values('city').distinct(),
-                context_object_name='latest_academies_list',
-                template_name='academies_list.html'),
-                name='academies_list'),
-                    path('', displaycity, name='academies_list'),
-    path('', ListView.as_view(
-        queryset=Academia.objects.values('city').distinct(),
-        context_object_name='latest_academies_list',
-        template_name='academies_details2.html'),
-         name='academies_details2'),
-"""

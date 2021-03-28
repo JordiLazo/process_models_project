@@ -16,7 +16,7 @@
             {% empty %}<option>Sorry, no city registered yet.</option>
             {% endfor %}
          </select>
-        <input type="submit" value="Submit"/>
+        <button class="btn btn-primary" type="submit" > Search </button>
  </form>
 
 <table class="table table-sm">
@@ -44,28 +44,4 @@
 
  </tbody>
  </table>
-<script>
-$(document).ready(function() {
-    var name = "drop1"
-    var query = decodeURIComponent(
-    (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-
-    $(" tr ").each(function(){
-        var academia = $(this).attr('id')
-        if(query !== academia && query!=null && query!=="") {
-            document.getElementById(academia).remove();
-        }
-    });
-    var academia = document.getElementById("drop1");
-    [].slice.call(academia.options)
-    .map(function(a){
-    if(this[a.innerText]){
-    academia.removeChild(a);
-    } else {
-    this[a.innerText]=1;
-    }
-    },{});
-
-});
-</script>
 {% endblock %}
