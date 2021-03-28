@@ -3,7 +3,7 @@
 
 <div class="container">
   <div class="row">
-    {% for academia in latest_academies_list%}
+    {% for view in views_academies%}
 
     <div class="col-md-4 col-sm-6 col-xl-4 my-3">
       <div class="card d-block h-100 box-shadow-hover">
@@ -11,11 +11,10 @@
             <a> <img class="img-fluid w-xs-120p" src="https://raw.githubusercontent.com/solodev/boxes-with-distinct-hover-effect/master/images/valkyrie.png" alt="valkyrie ship image"> </a>
         </div>
         <div class="card-body p-4">
-          <h3 class="h4"><strong>{{ academia.name }}</strong></h3>
-          <p><strong> City: </strong>{{ academia.city }}</p>
-          <p><strong> Telephone: </strong>{{ academia.telephone }}</p>
-          <p><strong> URL: </strong>{{ academia.url }}</p>
-         <button class="btn btn-dark"><a class="white" href="/courses?drop1={{ academia.name }}"> view courses </a></button>
+          <h3 class="h4"><strong> Stars: {{ view.rating }}</strong></h3>
+          <p><strong> Comment: </strong>{{ view.comment }}</p>
+          <p><strong> Date Comment: </strong>{{ view.date }}</p>
+          <p><strong> Nombre Academia: </strong>{{ view.academia.name }}</p>
         </div>
       </div>
     </div>

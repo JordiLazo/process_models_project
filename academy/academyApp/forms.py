@@ -1,11 +1,9 @@
-from django.forms import ModelForm, forms
-from .models import Academia, CiudadesAcademia
+from django import forms
+from academyApp.models import AcademiaReview
 
 
-class AcademiaForm(ModelForm):
+class FormularioAlumno(forms.ModelForm):
     class Meta:
-        model = Academia
-
-class CiudadAcademiaForm(ModelForm):
-    class Meta:
-        model = CiudadesAcademia
+        model = AcademiaReview
+        fields = '__all__'
+        widgets = {'date': forms.DateInput(attrs={'type': 'date'})}

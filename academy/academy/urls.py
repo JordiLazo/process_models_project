@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.utils import timezone
 from django.views.generic import ListView
-from academyApp.models import Academia, Curso
+from academyApp.models import Academia, Curso, AcademiaReview
 from django.conf.urls import url
-from academyApp.views import test
+from academyApp.views import FormularioAlumnoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,21 +32,26 @@ urlpatterns = [
                 context_object_name='latest_academies_list',
                 template_name='academies_details.html'),
                 name='academies_details'),
-    url('details/academis/<str:pk>/', test, name='academies_details'),
     path('details/academis', ListView.as_view(queryset=Academia.objects.filter(date__lte=timezone.now()).order_by('-date')[:5],
                     context_object_name='latest_academies_list',
                     template_name='academies_details.html'),
                     name='academies_details'),
     path('courses/', ListView.as_view(queryset=Curso.objects.all(),
-                                          context_object_name='academies_courses',
-                                          template_name='academies_courses.html'),
-                                          name='academies_courses'),
-
-
+                    context_object_name='academies_courses',
+                    template_name='academies_courses.html'),
+                    name='academies_courses'),
+    path('views/comments', ListView.as_view(queryset=AcademiaReview.objects.all(),
+                    context_object_name='views_academies',
+                    template_name='views_academies.html'),
+                    name='views_academies'),
+    path('review/create', FormularioAlumnoView.index, name='review_create'),
+    path('review/save', FormularioAlumnoView.procesar_formulario, name='review_save'),
 ]
 
 
 """
+url('details/academis/<str:pk>/', test, name='academies_details'),
+url('review/create/<str:pk>/', review, name='review_create'),
 url('details/academis', filtro, name='academies_details2'),
     path('', ListView.as_view(
                 queryset=Academia.objects.values('city').distinct(),

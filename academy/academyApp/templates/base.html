@@ -13,28 +13,11 @@
     <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <style>
-        .box-shadow-hover:hover {
-          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-        }
-
-        .pointer {
-          cursor: pointer;
-        }
-
-        img {
-          width: auto;
-          max-height: 100px;
-        }
-
-        /* JSFiddle display layout adjustment only */
-        .container {
-          margin-bottom: 2rem;
-        }
         .white {
-            color: white;
+          color: white !important;
         }
         .white:hover {
-            color: white;
+          color: white !important;
         }
     </style>
     <title>{% block title %}Academies{% endblock %}</title>
@@ -52,8 +35,6 @@
 </div>
 
 <div id="content">
-
-
     {% block content %}
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
     {% endblock %}

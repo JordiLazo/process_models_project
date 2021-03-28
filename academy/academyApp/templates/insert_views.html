@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h3>Add Review</h3>
+
+        <form action="{% url 'review_save' %}" method="post">
+            {% csrf_token %}
+            {% if mensaje %}
+                <div class="alert alert-success" role="alert">
+                    Review Registrada correctamente
+                </div>
+            {% endif %}
+
+                {{ form|crispy }}
+
+            <button type="submit" class="btn btn-primary"> Guardar</button>
+        </form>
+{% endblock %}

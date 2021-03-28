@@ -29,7 +29,7 @@ class Curso(models.Model):
         return u"%s" % self.name
 
     def get_absolute_url(self):
-        return reverse('myrestaurants:dish_detail', kwargs={'pkr': self.academia.pk, 'pk': self.pk})
+        return reverse('academyApp:dish_detail', kwargs={'pkr': self.academia.pk, 'pk': self.pk})
 
 
 class Review(models.Model):
@@ -48,3 +48,4 @@ class AcademiaReview(Review):
 
     class Meta:
         unique_together = ("academia", "user")
+
